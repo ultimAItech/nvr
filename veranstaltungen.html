@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veranstaltungen | Nautischer Verein Rostock e.V.</title>
+
+    <div id="global-header"></div>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1 class="reveal">Veranstaltungen</h1>
+    </header>
+
+    <main class="page-content section container">
+        <div class="content-wrapper reveal">
+
+            <div class="events-list">
+                <!-- Placeholder Event -->
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">15</span>
+                        <span class="month">OKT</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Vortrag: "Moderne Schiffsantriebe"</h3>
+                        <p class="event-meta"><span class="time">19:00 Uhr</span> | <span class="location">Clubhaus der
+                                Marine</span></p>
+                        <p class="event-desc">Expertenvortrag über die neuesten Entwicklungen im Bereich klimaneutraler
+                            Schiffsantriebe.</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder Event -->
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="day">12</span>
+                        <span class="month">NOV</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>Jahreshauptversammlung</h3>
+                        <p class="event-meta"><span class="time">18:30 Uhr</span> | <span class="location">Hotel
+                                Warnow</span></p>
+                        <p class="event-desc">Nur für Mitglieder. Rückblick auf das vergangene Jahr und Wahlen des
+                            Vorstands.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="global-footer"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <style>
+        .content-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .event-card {
+            display: flex;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: transform var(--transition-fast);
+        }
+
+        .event-card:hover {
+            transform: translateX(10px);
+        }
+
+        .event-date {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+        }
+
+        .event-date .day {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            font-family: var(--font-heading);
+        }
+
+        .event-date .month {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .event-details {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .event-details h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .event-meta {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .event-desc {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 600px) {
+            .event-card {
+                flex-direction: column;
+            }
+
+            .event-date {
+                padding: 1rem;
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
+    </style>
+</body>
+
+</html>

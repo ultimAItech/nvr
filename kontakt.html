@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | Nautischer Verein Rostock e.V.</title>
+
+    <div id="global-header"></div>
+</head>
+
+<body>
+    <header class="page-header">
+        <h1 class="reveal">Kontakt</h1>
+    </header>
+
+    <main class="page-content section container">
+        <div class="content-wrapper reveal">
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <h2>Nehmen Sie Kontakt auf</h2>
+                    <p>Haben Sie Fragen zum Verein, zur Mitgliedschaft oder zu unseren Veranstaltungen? Wir freuen uns
+                        über Ihre Nachricht.</p>
+
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Postanschrift</strong>
+                            <p>Nautischer Verein Rostock e.V.<br>Am Bahnhof 1c<br>18119 Rostock<br>Deutschland</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">✉️</span>
+                        <div>
+                            <strong>E-Mail</strong>
+                            <p><a href="mailto:info@nv-rostock.de">info@nv-rostock.de</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-icon">📸</span>
+                        <div>
+                            <strong>Social Media</strong>
+                            <p><a href="https://www.instagram.com/nautischer_verein_rostock/" target="_blank"
+                                    rel="noopener noreferrer">Folgen Sie uns auf Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Form placeholder -->
+                <div class="contact-form">
+                    <form action="#" method="POST"
+                        onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Nachricht!');">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail</label>
+                            <input type="email" id="email" name="email" required placeholder="ihre.email@beispiel.de">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Betreff</label>
+                            <select id="subject" name="subject">
+                                <option value="general">Allgemeine Anfrage</option>
+                                <option value="membership">Mitgliedschaft</option>
+                                <option value="events">Veranstaltungen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Nachricht</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Wie können wir Ihnen helfen?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Nachricht senden</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div id="global-footer"></div>
+
+    <script type="module" src="/src/main.js"></script>
+    <style>
+        .content-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info>p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            font-size: 2rem;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+        }
+    </style>
+</body>
+
+</html>
