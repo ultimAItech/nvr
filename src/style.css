@@ -355,3 +355,16 @@ ul {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* --- Watermark --- */
+#site-watermark {
+  position: fixed;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 999;
+}

@@ -1,12 +1,12 @@
 export function renderNavbar() {
   const currentPath = window.location.pathname;
-  const isHome = currentPath === '/' || currentPath === '/index.html';
+  const isHome = currentPath === '/' || currentPath.endsWith('/') || currentPath.endsWith('index.html');
 
   return `
     <nav class="navbar">
       <div class="nav-container">
-        <a href="/" class="brand">
-          <img src="/logo.png" alt="NV Rostock Logo" style="height: 40px; width: auto;" />
+        <a href="index.html" class="brand">
+          <img src="logo.png" alt="NV Rostock Logo" style="height: 40px; width: auto;" />
           <span class="brand-text">NV Rostock</span>
         </a>
         <button class="mobile-menu-btn" aria-label="Toggle menu">
@@ -15,12 +15,12 @@ export function renderNavbar() {
           <span></span>
         </button>
         <div class="nav-links">
-          <a href="/verein.html" class="${currentPath.includes('verein') ? 'active' : ''}">Verein</a>
-          <a href="/mitgliedschaft.html" class="${currentPath.includes('mitgliedschaft') ? 'active' : ''}">Mitgliedschaft</a>
-          <a href="/vorstand.html" class="${currentPath.includes('vorstand') ? 'active' : ''}">Vorstand</a>
-          <a href="/veranstaltungen.html" class="${currentPath.includes('veranstaltungen') ? 'active' : ''}">Veranstaltungen</a>
-          <a href="/seemannschaft.html" class="${currentPath.includes('seemannschaft') ? 'active' : ''}">Seemannschaft</a>
-          <a href="/kontakt.html" class="${currentPath.includes('kontakt') ? 'active' : ''}">Kontakt</a>
+          <a href="verein.html" class="${currentPath.includes('verein') ? 'active' : ''}">Verein</a>
+          <a href="mitgliedschaft.html" class="${currentPath.includes('mitgliedschaft') ? 'active' : ''}">Mitgliedschaft</a>
+          <a href="vorstand.html" class="${currentPath.includes('vorstand') ? 'active' : ''}">Vorstand</a>
+          <a href="veranstaltungen.html" class="${currentPath.includes('veranstaltungen') ? 'active' : ''}">Veranstaltungen</a>
+          <a href="seemannschaft.html" class="${currentPath.includes('seemannschaft') ? 'active' : ''}">Seemannschaft</a>
+          <a href="kontakt.html" class="${currentPath.includes('kontakt') ? 'active' : ''}">Kontakt</a>
         </div>
       </div>
     </nav>
@@ -36,12 +36,12 @@ export function renderFooter() {
           <p>Treffpunkt für Seefahrende und Seefahrtbegeisterte seit 1990</p>
         </div>
         <div class="footer-links">
-          <a href="/kontakt.html">Kontakt</a>
+          <a href="kontakt.html">Kontakt</a>
           <a href="https://www.instagram.com/nautischer_verein_rostock/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; ${new Date().getFullYear()} Nautischer Verein Rostock e.V.</p>
+        <p>&copy; ultimAItech 2026</p>
       </div>
     </footer>
   `;
@@ -56,6 +56,15 @@ export function initComponents() {
   const footer = document.getElementById('global-footer');
   if (footer) {
     footer.innerHTML = renderFooter();
+  }
+
+  // Watermark on all pages
+  let watermark = document.getElementById('site-watermark');
+  if (!watermark) {
+    watermark = document.createElement('div');
+    watermark.id = 'site-watermark';
+    watermark.textContent = 'ultimAItech';
+    document.body.appendChild(watermark);
   }
 
   // Mobile menu logic
